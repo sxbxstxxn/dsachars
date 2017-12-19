@@ -6,6 +6,9 @@
 			<trans-unit id="name.description">
 				<source>name</source>
 			</trans-unit>
+			<trans-unit id="feuser_i_d.description">
+				<source>feuserID</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

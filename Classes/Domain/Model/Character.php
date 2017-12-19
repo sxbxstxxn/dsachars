@@ -40,6 +40,14 @@ class Character extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @validate NotEmpty
      */
     protected $name = '';
+  
+      /**
+     * feuserID
+     *
+     * @var int
+     * @validate NotEmpty
+     */
+    protected $feuserID = 0;
     
     /**
      * Returns the name
@@ -61,5 +69,26 @@ class Character extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->name = $name;
     }
+  
+    /**
+     * Returns the feuserID
+     *
+     * @return integer feuserID
+     */
+    public function getFeuserID()
+    {
+        return $this->feuserID;
+    }
+    
+    /**
+     * Sets the feuserID
+     *
+     * @param integer $feuserID
+     * @return integer feuserID
+     */
+    public function setFeuserID($feuserID)
+    {
+        $this->feuserID = $feuserID;
+    }  
 
 }

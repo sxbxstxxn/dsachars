@@ -33,6 +33,8 @@ namespace Sc\Dsachars\Controller;
 class CharacterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
+    protected $customUserID = 0;
+  
     /**
      * characterRepository
      *
@@ -48,7 +50,9 @@ class CharacterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
     public function listAction()
     {
-        $characters = $this->characterRepository->findAll();
+        $this->customUserID = $GLOBALS['TSFE']->fe_user->user['uid'];
+        $characters = $this->characterRepository->findByFeuserID($this->customUserID);
+        //$characters = $this->characterRepository->findAll();
         $this->view->assign('characters', $characters);
     }
     
@@ -81,6 +85,11 @@ class CharacterController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
      */
     public function createAction(\Sc\Dsachars\Domain\Model\Character $newCharacter)
     {
+        $this->customUserID = $GLOBALS['TSFE']->fe_user->user['uid'];
+        //$newCharacter->feuserID = $this->customUserID;
+        $newCharacter->setFeuserID($this->customUserID);
+        //var_dump($newCharacter);die;
+      
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
         $this->characterRepository->add($newCharacter);
         $this->redirect('list');

@@ -9,6 +9,9 @@
 			<trans-unit id="tx_dsachars_domain_model_character.name">
 				<source>Name</source>
 			</trans-unit>
+			<trans-unit id="tx_dsachars_domain_model_character.feuser_i_d">
+				<source>FeuserID</source>
+			</trans-unit>			
 		</body>
 	</file>
 </xliff>
