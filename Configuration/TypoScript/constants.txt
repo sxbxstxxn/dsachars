@@ -1,0 +1,15 @@
+
+plugin.tx_dsachars_pi {
+	view {
+		# cat=plugin.tx_dsachars_pi/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:dsachars/Resources/Private/Templates/
+		# cat=plugin.tx_dsachars_pi/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:dsachars/Resources/Private/Partials/
+		# cat=plugin.tx_dsachars_pi/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:dsachars/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_dsachars_pi//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

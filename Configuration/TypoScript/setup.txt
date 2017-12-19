@@ -1,0 +1,45 @@
+
+plugin.tx_dsachars_pi {
+	view {
+		templateRootPaths.0 = {$plugin.tx_dsachars_pi.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_dsachars_pi.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_dsachars_pi.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_dsachars_pi.persistence.storagePid}
+	}
+}
+
+plugin.tx_dsachars._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-dsachars table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-dsachars table th {
+		font-weight:bold;
+	}
+
+	.tx-dsachars table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
